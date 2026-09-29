@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bright Smile Foundation dental healthcare services supported by Balla Enterprises Trust.">
+<title>Bright Smile Foundation | Dental Care</title>
+<style>
+:root{
+  --navy:#092c4c; --blue:#0b79c9; --cyan:#16b8c4; --mint:#e9fbfa;
+  --ink:#17324d; --muted:#617589; --white:#fff; --line:#dceaf2;
+  --shadow:0 18px 55px rgba(9,44,76,.12); --radius:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#f7fbfd;line-height:1.6}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.topbar{background:var(--navy);color:#dcecf7;font-size:.86rem}
+.topbar .container{display:flex;justify-content:space-between;gap:16px;padding:9px 0;flex-wrap:wrap}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,234,242,.8)}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy)}
+.tooth{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;box-shadow:0 8px 20px rgba(11,121,201,.25)}
+.tooth svg{width:27px}
+.brand small{display:block;font-weight:600;color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+.links{display:flex;gap:24px;align-items:center;font-size:.92rem;font-weight:700}
+.links a{color:#456075}
+.links a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:14px;border:1px solid transparent;font-weight:800;cursor:pointer;transition:.25s}
+.btn-primary{background:var(--blue);color:white;box-shadow:0 10px 25px rgba(11,121,201,.22)}
+.btn-primary:hover{transform:translateY(-2px);background:#086caf}
+.btn-light{background:white;color:var(--navy);border-color:var(--line)}
+.menu{display:none;border:0;background:none;font-size:1.6rem;color:var(--navy)}
+.hero{position:relative;overflow:hidden;background:
+ radial-gradient(circle at 90% 20%,rgba(22,184,196,.22),transparent 28%),
+ radial-gradient(circle at 10% 100%,rgba(11,121,201,.14),transparent 35%),
+ linear-gradient(135deg,#eefbff,#f7ffff 55%,#effcfa);padding:78px 0 66px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:55px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:white;border:1px solid var(--line);padding:7px 12px;border-radius:99px;color:var(--blue);font-size:.82rem;font-weight:800;margin-bottom:18px;box-shadow:0 7px 20px rgba(9,44,76,.06)}
+h1{font-size:clamp(2.5rem,5vw,4.8rem);line-height:1.03;letter-spacing:-.045em;color:var(--navy);max-width:700px}
+.hero p{font-size:1.08rem;color:var(--muted);max-width:650px;margin:22px 0 28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{position:relative;min-height:430px;border-radius:34px;background:linear-gradient(145deg,#0b79c9,#16b8c4);box-shadow:var(--shadow);overflow:hidden;padding:28px;color:white}
+.hero-card:before{content:"";position:absolute;width:300px;height:300px;border:70px solid rgba(255,255,255,.12);border-radius:50%;right:-100px;top:-100px}
+.hero-card:after{content:"";position:absolute;width:210px;height:210px;border:45px solid rgba(255,255,255,.10);border-radius:50%;left:-110px;bottom:-100px}
+.hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.hero-tooth{width:150px;height:150px;margin:15px auto 0;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);border-radius:42px;display:grid;place-items:center;animation:float 4s ease-in-out infinite}
+.hero-tooth svg{width:95px}
+@keyframes float{50%{transform:translateY(-10px) rotate(2deg)}}
+.hero-points{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero-points div{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);padding:13px;border-radius:15px;font-size:.86rem;font-weight:700}
+.stats{margin-top:-25px;position:relative;z-index:3}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{background:white;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px;padding:22px;text-align:center}
+.stat strong{display:block;font-size:2rem;color:var(--blue);line-height:1.1}
+.stat span{font-size:.82rem;color:var(--muted);font-weight:700}
+section{padding:88px 0}
+.section-head{max-width:720px;margin-bottom:36px}
+.kicker{color:var(--blue);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem}
+h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.1;color:var(--navy);margin:9px 0 14px;letter-spacing:-.03em}
+.section-head p{color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.feature{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 12px 35px rgba(9,44,76,.06);transition:.3s}
+.feature:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.icon{width:48px;height:48px;border-radius:15px;background:var(--mint);color:var(--blue);display:grid;place-items:center;margin-bottom:18px}
+.icon svg{width:25px}
+.feature h3{margin-bottom:8px;color:var(--navy)}
+.feature p{color:var(--muted);font-size:.95rem}
+.feature .tag{display:inline-block;margin-top:15px;color:var(--blue);font-size:.78rem;font-weight:900;background:#eef8ff;padding:6px 10px;border-radius:99px}
+.treatments{background:#eef8fc}
+.tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:25px}
+.tab{padding:10px 15px;border:1px solid var(--line);background:white;color:#557084;border-radius:99px;font-weight:800;cursor:pointer}
+.tab.active,.tab:hover{background:var(--blue);color:white;border-color:var(--blue)}
+.treatment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.treatment{background:white;border:1px solid var(--line);border-radius:20px;padding:22px;transition:.25s}
+.treatment:hover{transform:translateY(-4px)}
+.treatment h3{font-size:1.05rem;color:var(--navy);margin-bottom:12px}
+.treatment ul{list-style:none;color:var(--muted);font-size:.9rem}
+.treatment li{padding:6px 0;border-bottom:1px dashed #e1edf3}
+.treatment li:last-child{border-bottom:0}
+.treatment li:before{content:"✓";color:var(--cyan);font-weight:900;margin-right:8px}
+.clinic{display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:stretch}
+.panel{background:var(--navy);color:white;border-radius:30px;padding:35px;position:relative;overflow:hidden}
+.panel h2{color:white}
+.panel p{color:#c9d9e6}
+.panel .big{font-size:4rem;font-weight:900;line-height:1;color:#65e2df;margin:15px 0}
+.panel:after{content:"";position:absolute;width:230px;height:230px;border:45px solid rgba(255,255,255,.06);border-radius:50%;right:-120px;bottom:-120px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.check{background:white;border:1px solid var(--line);border-radius:18px;padding:20px}
+.check strong{display:block;color:var(--navy);margin-bottom:5px}
+.check span{font-size:.86rem;color:var(--muted)}
+.appointment{background:linear-gradient(135deg,#0b79c9,#0a587f);color:white;border-radius:32px;padding:45px}
+.appointment h2{color:white}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.form input,.form textarea{width:100%;border:0;outline:0;background:white;color:var(--ink);border-radius:14px;padding:14px}
+.form textarea{grid-column:1/-1;min-height:100px;resize:vertical}
+.form .full{grid-column:1/-1}
+.footer{background:#061f35;color:#b9cedd;padding:55px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:35px}
+.footer h3,.footer h4{color:white;margin-bottom:12px}
+.footer p,.footer a{font-size:.88rem}
+.footer a:hover{color:white}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:35px;padding-top:18px;font-size:.8rem;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s ease}
+.reveal.show{opacity:1;transform:none}
+#toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:white;padding:14px 18px;border-radius:14px;box-shadow:var(--shadow);opacity:0;transform:translateY(15px);pointer-events:none;transition:.3s;z-index:100}
+#toast.show{opacity:1;transform:none}
+@media(max-width:900px){
+  .links{display:none}.menu{display:block}.nav.open .links{display:flex;position:absolute;left:0;right:0;top:76px;background:white;padding:18px 4%;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}
+  .hero-grid,.clinic{grid-template-columns:1fr}.hero-card{min-height:370px}.stats-grid{grid-template-columns:repeat(2,1fr)}
+  .treatment-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  section{padding:65px 0}.hero{padding:55px 0}.features,.checks,.treatment-grid,.form{grid-template-columns:1fr}
+  .stats{margin-top:0;padding-top:14px}.stats-grid{grid-template-columns:1fr 1fr}
+  .form textarea,.form .full{grid-column:auto}.hero-points{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="container">
+    <span>Bright Smile Foundation • CSR-supported dental healthcare projects</span>
+    <span>10:00 AM – 8:00 PM • Appointment based</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home">
+      <span class="tooth" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M19 8c-7 0-12 5-12 13 0 9 4 11 5 18 2 11 4 17 9 17 6 0 4-17 11-17s5 17 11 17c5 0 7-6 9-17 1-7 5-9 5-18 0-8-5-13-12-13-6 0-8 3-13 3S25 8 19 8Z" fill="currentColor"/></svg>
+      </span>
+      <span>Bright Smile Foundation<small>Balla Enterprises Trust</small></span>
+    </a>
+    <button class="menu" id="menu" aria-label="Open menu">☰</button>
+    <nav class="links">
+      <a href="#about">Why Us</a>
+      <a href="#services">Services</a>
+      <a href="#treatments">Treatments</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="#appointment">Book Appointment</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">● Modern dental care • Mumbai</span>
+      <h1>Healthy smiles, backed by modern dental care.</h1>
+      <p>Bright Smile Foundation provides comprehensive dental treatment with modern diagnostic facilities, experienced dentists, strict sterilization protocols and appointment-based care.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#appointment">Book an Appointment →</a>
+        <a class="btn btn-light" href="tel:+919769750171">Call +91 976975 0171</a>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <div class="hero-content">
+        <div>
+          <div class="hero-tooth">
+            <svg viewBox="0 0 64 64" fill="none"><path d="M19 8c-7 0-12 5-12 13 0 9 4 11 5 18 2 11 4 17 9 17 6 0 4-17 11-17s5 17 11 17c5 0 7-6 9-17 1-7 5-9 5-18 0-8-5-13-12-13-6 0-8 3-13 3S25 8 19 8Z" fill="white"/></svg>
+          </div>
+        </div>
+        <div class="hero-points">
+          <div>12 skilled dentists</div>
+          <div>20+ years experience</div>
+          <div>In-built OPG & scanners</div>
+          <div>10 AM – 8 PM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat reveal"><strong data-count="12">0</strong><span>Skilled dentists</span></div>
+    <div class="stat reveal"><strong data-count="20">0</strong><span>+ years experience</span></div>
+    <div class="stat reveal"><strong data-count="10">0</strong><span>Hours open daily</span></div>
+    <div class="stat reveal"><strong>2</strong><span>Working dental chairs</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Why Bright Smile Foundation?</span>
+      <h2>Designed around comfort, diagnosis, hygiene and expertise.</h2>
+      <p>Key points from the supplied Bright Smile Foundation / Balla Enterprises Trust presentation.</p>
+    </div>
+    <div class="features">
+      <article class="feature reveal">
+        <div class="icon">⌁</div>
+        <h3>Modern diagnostic facilities</h3>
+        <p>Two working chairs are described with in-built X-ray machines in each cabin, plus an in-built OPG machine and an intraoral scanner.</p>
+        <span class="tag">Diagnostics</span>
+      </article>
+      <article class="feature reveal">
+        <div class="icon">✦</div>
+        <h3>Experienced dental team</h3>
+        <p>The presentation states a team of 12 dentists with 20+ years of experience and expertise across multiple areas of dental treatment.</p>
+        <span class="tag">12 dentists</span>
+      </article>
+      <article class="feature reveal">
+        <div class="icon">✓</div>
+        <h3>Advanced sterilization</h3>
+        <p>A dedicated sterilization room and autoclaving protocols are described, with the clinic maintaining a hygienic environment.</p>
+        <span class="tag">Patient safety</span>
+      </article>
+      <article class="feature reveal">
+        <div class="icon">◷</div>
+        <h3>Appointment-based care</h3>
+        <p>Clinic timing is stated as 10 AM to 8 PM, with treatments based on appointments to minimize waiting time.</p>
+        <span class="tag">10 AM – 8 PM</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="treatments" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Services & facilities</span>
+      <h2>Everything needed for a complete dental visit.</h2>
+      <p>Diagnostic services highlighted in the supplied presentation.</p>
+    </div>
+    <div class="treatment-grid">
+      <article class="treatment reveal"><h3>In-built OPG Machine</h3><ul><li>Panoramic X-rays</li><li>Oral diagnostics</li><li>High-quality imaging</li></ul></article>
+      <article class="treatment reveal"><h3>Intraoral Scanner</h3><ul><li>Digital impressions</li><li>Comfort-focused scanning</li><li>Precision</li></ul></article>
+      <article class="treatment reveal"><h3>Nitrous Oxide Sedation</h3><ul><li>Stress-free procedures</li><li>Comfort-focused care</li><li>Available as described in presentation</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section id="treatments">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Treatments</span>
+      <h2>A broad range of dental treatments.</h2>
+      <p>Use the filters to explore the treatment categories listed in the supplied presentation.</p>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-cat="all">All</button>
+      <button class="tab" data-cat="endo">Endodontic</button>
+      <button class="tab" data-cat="prostho">Prosthodontic</button>
+      <button class="tab" data-cat="ortho">Orthodontic</button>
+      <button class="tab" data-cat="pedo">Pedodontic</button>
+      <button class="tab" data-cat="surgery">Oral Surgery</button>
+      <button class="tab" data-cat="perio">Periodontic</button>
+      <button class="tab" data-cat="implants">Implants</button>
+      <button class="tab" data-cat="other">Other</button>
+    </div>
+    <div class="treatment-grid" id="treatmentGrid">
+      <article class="treatment reveal" data-cat="endo"><h3>Endodontic</h3><ul><li>Single Sitting Root Canal</li><li>Composite & GIC Fillings</li><li>Post and Core</li></ul></article>
+      <article class="treatment reveal" data-cat="prostho"><h3>Prosthodontic</h3><ul><li>Crowns & Bridges</li><li>Complete/Partial Dentures</li><li>Crowns on Root Canal Teeth</li><li>Laminates & Veneers</li></ul></article>
+      <article class="treatment reveal" data-cat="ortho"><h3>Orthodontic</h3><ul><li>Braces</li><li>Clear Aligners</li></ul></article>
+      <article class="treatment reveal" data-cat="pedo"><h3>Pedodontic</h3><ul><li>Root Canal on Milk Teeth</li><li>Fillings</li><li>Fluoride Applications</li><li>Pit & Fissure Sealants</li><li>Milk Tooth Extraction</li></ul></article>
+      <article class="treatment reveal" data-cat="surgery"><h3>Oral Surgical</h3><ul><li>Surgical Extractions (Wisdom Teeth)</li><li>Cystic Lesion Removal</li><li>Normal Extractions</li></ul></article>
+      <article class="treatment reveal" data-cat="perio"><h3>Periodontic</h3><ul><li>Flap Surgery</li><li>Full Mouth Scaling</li><li>Bone Grafting</li><li>Gingivectomy</li><li>Crown Lengthening</li></ul></article>
+      <article class="treatment reveal" data-cat="implants"><h3>Implants</h3><ul><li>Single Implant Placement</li><li>Multiple Implant Placement</li><li>Full Mouth Rehabilitation</li></ul></article>
+      <article class="treatment reveal" data-cat="other"><h3>Other Treatments</h3><ul><li>Teeth Whitening</li><li>Tooth Jewelry</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container clinic">
+    <div class="panel reveal">
+      <span class="kicker" style="color:#65e2df">Patient-first environment</span>
+      <h2>Comfort and cleanliness at every step.</h2>
+      <p>The supplied presentation emphasizes a dedicated sterilization room, autoclaving protocols and a hygienic clinic environment.</p>
+      <div class="big">10–8</div>
+      <p>Clinic hours stated in the presentation: 10 AM to 8 PM.</p>
+    </div>
+    <div class="checks">
+      <div class="check reveal"><strong>Modern amenities</strong><span>Two working chairs with in-built X-ray machines in each cabin.</span></div>
+      <div class="check reveal"><strong>Digital workflow</strong><span>Intraoral scanner for digital impressions.</span></div>
+      <div class="check reveal"><strong>Complete diagnostics</strong><span>In-built OPG machine for oral diagnostics.</span></div>
+      <div class="check reveal"><strong>Comfort option</strong><span>Nitrous oxide sedation is listed in the presentation.</span></div>
+      <div class="check reveal"><strong>Experienced team</strong><span>12 dentists with 20+ years of experience are stated.</span></div>
+      <div class="check reveal"><strong>Appointment care</strong><span>Appointments are used to reduce patient waiting time.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="appointment">
+  <div class="container">
+    <div class="appointment reveal">
+      <span class="kicker" style="color:#b7ffff">Book a visit</span>
+      <h2>Start your dental care journey.</h2>
+      <p>Send an appointment request. This demo form opens your email app with the details filled in.</p>
+      <form class="form" id="appointmentForm">
+        <input id="name" required placeholder="Your name">
+        <input id="phone" required placeholder="Phone number">
+        <input id="date" type="date" required>
+        <input id="time" type="time" required>
+        <textarea id="message" placeholder="Treatment / message"></textarea>
+        <button class="btn btn-light full" type="submit">Request Appointment →</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="container footer-grid">
+    <div>
+      <h3>Bright Smile Foundation</h3>
+      <p>CSR-supported dental healthcare projects. Presented information is associated with Balla Enterprises Trust.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><a href="tel:+919769750171">+91 976975 0171</a></p>
+      <p><a href="tel:+919820178851">+91 98201 78851</a></p>
+      <p><a href="mailto:satyanand.balla@gmail.com">satyanand.balla@gmail.com</a></p>
+    </div>
+    <div>
+      <h4>Online</h4>
+      <p><a href="https://www.ballaenterprisestrust.co.in" target="_blank" rel="noopener">ballaenterprisestrust.co.in</a></p>
+      <p>10:00 AM – 8:00 PM</p>
+      <p>Appointment-based treatments</p>
+    </div>
+  </div>
+  <div class="container copy"><span>© <span id="year"></span> Bright Smile Foundation</span><span>Website concept based on supplied presentation & information sheet.</span></div>
+</footer>
+
+<div id="toast">Your email app is opening…</div>
+
+<script>
+const nav=document.getElementById('nav');
+document.getElementById('menu').addEventListener('click',()=>nav.classList.toggle('open'));
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+document.querySelectorAll('[data-count]').forEach(el=>{
+  const target=+el.dataset.count;
+  const obs=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){
+      let n=0; const step=Math.max(1,Math.ceil(target/25));
+      const timer=setInterval(()=>{n=Math.min(target,n+step);el.textContent=n;if(n>=target)clearInterval(timer)},35);
+      obs.disconnect();
+    }
+  });
+  obs.observe(el);
+});
+
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat=tab.dataset.cat;
+    document.querySelectorAll('#treatmentGrid .treatment').forEach(card=>{
+      card.style.display=(cat==='all'||card.dataset.cat===cat)?'block':'none';
+    });
+  });
+});
+
+document.getElementById('appointmentForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const subject=encodeURIComponent('Dental Appointment Request - '+document.getElementById('name').value);
+  const body=encodeURIComponent(
+`Name: ${document.getElementById('name').value}
+Phone: ${document.getElementById('phone').value}
+Preferred date: ${document.getElementById('date').value}
+Preferred time: ${document.getElementById('time').value}
+Message: ${document.getElementById('message').value || 'N/A'}`
+  );
+  document.getElementById('toast').classList.add('show');
+  setTimeout(()=>{location.href=`mailto:satyanand.balla@gmail.com?subject=${subject}&body=${body}`},300);
+  setTimeout(()=>document.getElementById('toast').classList.remove('show'),2500);
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
